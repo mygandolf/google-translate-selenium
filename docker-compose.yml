@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  translator_app:
+    build: .
+    volumes:
+      - .:/app  # کل دایرکتوری پروژه را داخل کانتینر Bind کن
+    ports:
+      - "5000:5000"  # مپ کردن پورت Flask
+    environment:
+      - CHROMEDRIVER_PATH=/app/chromedrive
